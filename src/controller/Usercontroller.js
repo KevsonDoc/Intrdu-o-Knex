@@ -36,8 +36,6 @@ module.exports = {
     async delete(req, res, next) {
         try {
             const { id } = req.params;
-            console.log(id)
-
             await knex('users').where({ id }).del()
             return res.send();
         } catch (error) {
